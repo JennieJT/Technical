@@ -1,13 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="./src/practice.js"></script>
+    <!-- <style>
+        div {
+            background-color: pink;
+        }
+    </style> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 id="websiteTitle">
+            -- J❤️T -- C A D A M Y -- (●'◡'●)
+        </h1>
+    </div>
+    <div style="flex-direction: row; display : flex; height: 400px">
+        <div style="width: 20%; background-color: pink">
+            <h2>html basic tags</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <a href="#paragraph">paragraph</a>
+                </li>
+                <li>
+                    <a href="#li">list item</a>
+                </li>
+                <li>
+                    <a href="#ol">ordered list</a>
+                </li>
+                <h4><em>Forms</em></h4>
+                <li>
+                    <a href="#datalist">datalist</a>
+                </li>
+                <li>
+                    <a href="#range">range</a>
+                </li>
+                <li>
+                    <a href="#checkbox">checkbox</a>
+                </li>
+                <li>
+                    <a href="#radio">radio</a>
+                </li>
+                <li>
+                    <a href="#textarea">textArea</a>
+                </li>
+                <li>
+                    <a href="#number">number</a>
+                </li>
+                <li>
+                    <a href="#submit">submit</a>
+                </li>
+                <li>
+                    <a href="#text">text</a>
+                </li>
+            </ol>
+        </div>
+        <div id="middle" style="width: 60%; background-color:aquamarine">
+            <h2>--display--</h2>
+            <div id="paragraph">
+                <h6>
+                    Paragraph
+                </h6>
+                <p>
+                    Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent
+                    except Antarctica.
+                </p>
+            </div>
+            <div id="li">
+                <h6>Unordered List</h6>
+                <ul>
+                    <li>
+                        Apple
+                    </li>
+                    <li>
+                        Banana
+                    </li>
+                    <li>
+                        Mango
+                    </li>
+                </ul>
+            </div>
+            <div id="ol">
+                <h6>Ordered List</h6>
+                <ol>
+                    <li>
+                        Apple
+                    </li>
+                    <li>
+                        Banana
+                    </li>
+                    <li>
+                        Mango
+                    </li>
+                </ol>
+            </div>
+            <div id="datalist">
+                <h6>datalist</h6>
+                <form>
+                    <label for="fruit">Fruit List🍇: </label>
+                    <input type="text" list="fruits" id="fruit" name="fruit">
+                    <datalist id="fruits">
+                        <option value="Apple"></option>
+                        <option value="Banana"></option>
+                        <option value="Orange"></option>
+                        <option value="Pineapple"></option>
+                        <option value="Pear"></option>
+                        <option value="Tomato"></option>
+                        <option value="Strawberry"></option>
+                        <option value="Grape"></option>
+                        <option value="WaterMelon"></option>
+                    </datalist>
+                </form>
+            </div>
+            <div id="range">
+                <h6>range</h6>
+                <form>
+                    <label for="range">Range: </label>
+                    <input type="range" name="range" id="range">
+                </form>
+            </div>
+            <div id="checkbox">
+                <h6>checkbox</h6>
+                <p>What fruits do you like?</p>
+                <form>
+                    <label for="apple">apple</label>
+                    <input type="checkbox" id="apple">
+                    <label for="pear">pear</label>
+                    <input type="checkbox" id="pear">
+                    <label for="orange">orange</label>
+                    <input type="checkbox" id="orange">
+                </form>
+            </div>
+            <div id="radio">
+                <h6>radio</h6>
+                <p>What's your favorite fruit?</p>
+                <form>
+                        <label for="apple">apple</label>
+                        <input type="radio" name="fruit" id="apple">
+                        <br>
+                        <label for="orange">orange</label>
+                        <input type="radio" name="fruit" id="orange">
+                        <br>
+                        <label for="pear">pear</label>
+                        <input type="radio" name="fruit" id="pear">
+                </form>
+            </div>
+            <div id="textarea">
+                <h6>textarea</h6>
+                <form>
+                    <textarea rows = "10" cols = "50">I have a date</textarea>
+                </form>
+            </div>
+            <div id = "number">
+                <h6>number</h6>
+                <form>
+                    <p>How many fruits do you want?</p>
+                    <input type="number">
+                </form>
+            </div>
+            <div id = "submit">
+                <h6>submit</h6>
+                <form >
+                <input type="submit" value = "upload fruits">
+                </form>
+            </div>
+            <div id="text">
+                <h6>text</h6>
+                <form>
+                    <label for="text">What's your favorite fruit? </label>
+                    <input type="text" name="text" id="text">
+                </form>
+            </div>
+        </div>
+
+        <div style="width: 20%; background-color: blueviolet;">
+            <h2 style="text-align: center">event handling</h2>
+        </div>
+    </div>
+    <!-- <script>
+        document.getElementById("middle").style.color = "white";
+        let onHTML = "I'm on HTML";
+        const f = () => { };
+        console.log(onHTML);
+    </script> -->
+    <script src="./src/another.js"></script>
+</body>
+
 </html>
