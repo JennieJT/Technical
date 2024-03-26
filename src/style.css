@@ -7,3 +7,57 @@ body {
     display: none;
     height: 100px;
 }
+
+#main > div {
+    border-radius: 10px;
+    margin-right: 2px;
+}
+
+.navBar li{
+    display: inline-block;
+    margin: 3px;
+    color: #000;
+    background-color:lightgray;
+    font-size:1.5em;
+}
+nav::before{
+    content: "...";
+    display: inline-block;
+}
+nav::after {
+    content: "..." ;
+    display: inline-block;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+h1{
+    margin: 0.5em 0 0 0;
+}
+
+aside {
+    width: 10%;
+    font: italic;
+}
+
+aside > p {
+    box-shadow: inset 5px 0 5px -5px #29627e;;
+}
+
+code {
+    background-color: lightgray;
+    color: palevioletred;
+}
+
+a:hover {
+    background-color:aquamarine;
+}
+
+
+a.active {
+    background-color: yellow;
+}
