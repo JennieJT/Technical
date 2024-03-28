@@ -20,141 +20,41 @@
             -- J❤️T -- C A D A M Y -- (●'◡'●)
         </h1>
         <nav class="navBar">
-            <li class="navBar"><a href="../index.html" target = "_self">elements</a></li>
-            <li class="navBar"><a class= "active" href="./attributes.html" target = "_self">global attributes</a></li>
-            <li class="navBar"><a href="./CSS.html" target = "_self">CSS</a></li>
+            <li class="navBar"><a href="../index.html" target="_self">elements</a></li>
+            <li class="navBar"><a class="active" href="./attributes.html" target="_self">global attributes</a></li>
+            <li class="navBar"><a href="./CSS.html" target="_self">CSS</a></li>
         </nav>
     </div>
     <div id="main" style="flex-direction: row; display : flex; height: 90vh;">
-        <div id="global_attributes"></div>
-        <div id="CSS" ></div>
-        <div class="threeCol" id="middle" title="middle title" style="width: 60%; border: 1px solid black">
+        <div id="global_attributes" class="leftBar">
+            <h2>Global Attributes</h2>
+            <ol>
+                <li><a href="#accessKey">accessKey</a></li>
+                <li><a href="#class">class</a></li>
+                <li><a href="#autofocus">autofocus</a></li>
+                <li><a href="#dir">dir</a></li>
+                <li><a href="#eventHandler">eventHandler</a></li>
+                <li>I might be draggable</li>
+                <li>id</li>
+                <li>hidden</li>
+                <li><a href="#part">part</a></li>
+            </ol>
+        </div>
+        <div class="middleCol" id="middle" title="middle title" style="width: 60%; border: 1px solid black">
             <h2>--display--</h2>
-            <div id="paragraph">
-                <h6>
-                    Paragraph
-                </h6>
-                <p>
-                    Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent
-                    except Antarctica.
-                </p>
+            <div id = "dir">
+                <h6>dir</h6>
+                <p> indicates the directionality of the element's text.</p>
+                <p dir = 'rtl'> indicates the directionality of the element's text.</p>
             </div>
-            <div id="li">
-                <h6>Unordered List</h6>
-                <ul>
-                    <li>
-                        Apple
-                    </li>
-                    <li>
-                        Banana
-                    </li>
-                    <li>
-                        Mango
-                    </li>
-                </ul>
-            </div>
-            <div id="ol">
-                <h6>Ordered List</h6>
-                <ol>
-                    <li>
-                        Apple
-                    </li>
-                    <li>
-                        Banana
-                    </li>
-                    <li>
-                        Mango
-                    </li>
-                </ol>
-            </div>
-            <div id="datalist">
-                <h6>datalist</h6>
-                <form>
-                    <label for="fruit">Fruit List🍇: </label>
-                    <input type="text" list="fruits" id="fruit" name="fruit">
-                    <datalist id="fruits">
-                        <option value="Apple"></option>
-                        <option value="Banana"></option>
-                        <option value="Orange"></option>
-                        <option value="Pineapple"></option>
-                        <option value="Pear"></option>
-                        <option value="Tomato"></option>
-                        <option value="Strawberry"></option>
-                        <option value="Grape"></option>
-                        <option value="WaterMelon"></option>
-                    </datalist>
-                </form>
-            </div>
-            <div id="range">
-                <h6>range</h6>
-                <form>
-                    <label for="range">Range: </label>
-                    <input type="range" name="range" id="range">
-                </form>
-            </div>
-            <div id="checkbox">
-                <h6>checkbox</h6>
-                <p>What fruits do you like?</p>
-                <form>
-                    <label for="apple">apple</label>
-                    <input type="checkbox" id="apple">
-                    <label for="pear">pear</label>
-                    <input type="checkbox" id="pear">
-                    <label for="orange">orange</label>
-                    <input type="checkbox" id="orange">
-                </form>
-            </div>
-            <div id="radio">
-                <h6>radio</h6>
-                <p>What's your favorite fruit?</p>
-                <form>
-                    <label for="apple">apple</label>
-                    <input type="radio" name="fruit" id="apple">
-                    <br>
-                    <label for="orange">orange</label>
-                    <input type="radio" name="fruit" id="orange">
-                    <br>
-                    <label for="pear">pear</label>
-                    <input type="radio" name="fruit" id="pear">
-                </form>
-            </div>
-            <div id="textarea">
-                <h6>textarea</h6>
-                <form>
-                    <textarea rows="10" cols="50">I have a date</textarea>
-                </form>
-            </div>
-            <div id="number">
-                <h6>number</h6>
-                <form>
-                    <p>How many fruits do you want?</p>
-                    <input type="number">
-                </form>
-            </div>
-            <div id="submit">
-                <h6>submit</h6>
-                <form>
-                    <input type="submit" value="upload fruits">
-                </form>
-            </div>
-            <div id="text">
-                <h6>text</h6>
-                <form>
-                    <label for="text">What's your favorite fruit? </label>
-                    <input type="text" name="text" id="text">
-                </form>
-            </div>
-            <div id="nav">
-                Please try the nav bar above
-            </div>
-            <article id="article"></article>
-            <div id="code">
-                <p>I've been learning a lot of elements, and so far my fav element is definitely
-                    <code>code element</code></p>
+            <div id = "eventHandler">
+                <h6>All the Event Handler Attributes</h6>
+                <code>
+                    onabort, onautocomplete, onautocompleteerror, onblur, oncancel, oncanplay, oncanplaythrough, onchange, onclick, onclose, oncontextmenu, oncuechange, ondblclick, ondrag, ondragend, ondragenter, ondragleave, ondragover, ondragstart, ondrop, ondurationchange, onemptied, onended, onerror, onfocus, oninput, oninvalid, onkeydown, onkeypress, onkeyup, onload, onloadeddata, onloadedmetadata, onloadstart, onmousedown, onmouseenter, onmouseleave, onmousemove, onmouseout, onmouseover, onmouseup, onmousewheel, onpause, onplay, onplaying, onprogress, onratechange, onreset, onresize, onscroll, onseeked, onseeking, onselect, onshow, onsort, onstalled, onsubmit, onsuspend, ontimeupdate, ontoggle, onvolumechange, onwaiting.
+                </code>
             </div>
         </div>
-
-        <div style="width: 20%; border: 1px solid black" class="threeCol">
+        <div style="width: 20%; border: 1px solid black">
             <h2 style="text-align: center">event handling</h2>
         </div>
         <aside id="aside" style="display: none">
@@ -172,6 +72,7 @@
         console.log(onHTML);
     </script> -->
     <script src="./another.js"></script>
+    <script src = "./attributes.js"></script>
 </body>
 
 </html>

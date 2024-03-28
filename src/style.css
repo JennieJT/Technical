@@ -61,3 +61,18 @@ a:hover {
 a.active {
     background-color: yellow;
 }
+
+.leftBar {
+    width: 20%; 
+    border: 1px solid black;
+}
+
+button { 
+    width: 20em; 
+    margin: 0.5rem;
+    background-color: papayawhip;
+}
+
+#button{
+    display: flex;
+}

@@ -15,18 +15,19 @@
 </head>
 
 <body>
+    <script src = "./src/index.js"></script>
     <div class="head">
         <h1 id="websiteTitle">
             -- J❤️T -- C A D A M Y -- (●'◡'●)
         </h1>
         <nav class="navBar">
-            <li class="navBar"><a class = "active" target = "_self">elements</a></li>
-            <li class="navBar"><a href="./src/attributes.html" target = "_self">global attributes</a></li>
-            <li class="navBar"><a href="./src/CSS.html" target = "_self">CSS</a></li>
+            <li class="navBar"><a class="active" target="_self">elements</a></li>
+            <li class="navBar"><a href="./src/attributes.html" target="_self">global attributes</a></li>
+            <li class="navBar"><a href="./src/CSS.html" target="_self">CSS</a></li>
         </nav>
     </div>
     <div id="main" style="flex-direction: row; display : flex; height: 90vh;">
-        <div class="nav" style="width: 20%; border: 1px solid black">
+        <div class="leftBar">
             <div id="elements">
                 <h2>html basic tags</h2>
                 <ol style="text-align: left;">
@@ -87,19 +88,21 @@
                     <li>
                         <a href="#table">table</a>
                     </li>
+                    <li>
+                        <a href="#button">button</a>
+                    </li>
                 </ol>
             </div>
         </div>
-        <div id="global_attributes"></div>
-        <div id="CSS" ></div>
-        <div class="threeCol" id="middle" title="middle title" style="width: 60%; border: 1px solid black">
+        <div class="middleCol" id="middle" title="middle title" style="width: 60%; border: 1px solid black">
             <h2>--display--</h2>
             <div id="paragraph">
                 <h6>
                     Paragraph
                 </h6>
                 <p>
-                    Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent
+                    Geckos are a group of usually small, usually nocturnal lizards. They are found on every
+                    continent
                     except Antarctica.
                 </p>
             </div>
@@ -214,11 +217,25 @@
             <article id="article"></article>
             <div id="code">
                 <p>I've been learning a lot of elements, and so far my fav element is definitely
-                    <code>code element</code></p>
+                    <code>code element</code>
+                </p>
+            </div>
+            <div id="button">
+                <button type = "button" style = "width: 10em" onclick="handleButton()">
+                   Press Me
+                </button>
+                <button onclick = "handleCallback()">Callback Function</button>
+                <button onclick = "handlePromise()">Promise</button>
+                <button onclick = "handleThis()">This</button>
+                <button onclick="handleBindThis()">Bind this</button>
+                <button onclick = "handleClosure01()">Closure01</button>
+                <button onclick = "handleClosure02()">Closure02</button>
+                <button onclick = "handleClosure03()">Closure03</button>
+                <button onclick = "handleConfirm()">Confirm Me</button>
+                <button onclick="handlePrompt()">Prompt Me</button>
             </div>
         </div>
-
-        <div style="width: 20%; border: 1px solid black" class="threeCol">
+        <div class="rightCol" style="width: 20%; border: 1px solid black">
             <h2 style="text-align: center">event handling</h2>
         </div>
         <aside id="aside" style="display: none">

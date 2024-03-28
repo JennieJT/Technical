@@ -6,24 +6,27 @@ window.addEventListener("popstate", function (event) {
     let anchor = this.document.location.hash;
     let preHash = curHash;
     curHash = anchor;
-    this.document.querySelector(preHash).style.display = "none";
-    this.document.querySelector(curHash).style.display = "block";
+    if (!this.document.querySelector(preHash)) {
+        this.document.querySelector(preHash).style.display = "none";
+    }
+    this.document.querySelector(curHash).style.display = "flex";
+    this.document.querySelector(curHash).style.flexDirection = "column";
 });
 
-function onActive(e){
+function onActive(e) {
     const pre = document.querySelector("#elements a.active");
-    if(pre) {
+    if (pre) {
         pre.classList.remove("active");
     }
-    
+
     e.currentTarget.classList.add("active");
 }
 
 
-function addActiveColor (){
+function addActiveColor() {
     const aList = document.querySelectorAll("#elements a");
-    if(aList) {
-        aList.forEach((a) => {a.addEventListener("click", onActive)});
+    if (aList) {
+        aList.forEach((a) => { a.addEventListener("click", onActive) });
     }
 }
 addActiveColor();
