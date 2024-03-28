@@ -221,18 +221,19 @@
                 </p>
             </div>
             <div id="button">
-                <button type = "button" style = "width: 10em" onclick="handleButton()">
-                   Press Me
-                </button>
-                <button onclick = "handleCallback()">Callback Function</button>
-                <button onclick = "handlePromise()">Promise</button>
-                <button onclick = "handleThis()">This</button>
-                <button onclick="handleBindThis()">Bind this</button>
-                <button onclick = "handleClosure01()">Closure01</button>
-                <button onclick = "handleClosure02()">Closure02</button>
-                <button onclick = "handleClosure03()">Closure03</button>
-                <button onclick = "handleConfirm()">Confirm Me</button>
-                <button onclick="handlePrompt()">Prompt Me</button>
+                <div id = "button_container">
+                <div><button onclick="handleButton()">Press Me</button></div>
+                <div><button onclick = "handleCallback()">Callback Function</button></div>
+                <div><button onclick = "handlePromise()">Promise</button></div>
+                <div><button onclick = "handleThis()">This</button></div>
+                <div><button onclick="handleBindThis()">Bind this</button></div>
+                <div></div>
+                <div><button onclick = "handleClosure01()">Closure01</button></div>
+                <div><button onclick = "handleClosure02()">Closure02</button></div>
+                <div><button onclick = "handleClosure03()">Closure03</button></div>
+                <div><button onclick = "handleConfirm()">Confirm Me</button></div>
+                <div><button onclick="handlePrompt()">Prompt Me</button></div>
+                </div>
             </div>
         </div>
         <div class="rightCol" style="width: 20%; border: 1px solid black">
