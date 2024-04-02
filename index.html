@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="./src/style.css">
     <script src="./src/practice.js"></script>
+    <script src = "./src/localStorage/localforage.js"></script>
     <!-- <style>
         div {
             background-color: pink;
@@ -164,7 +165,7 @@
                 <h6>datalist</h6>
                 <form>
                     <label for="fruit">Fruit List🍇: </label>
-                    <input type="text" list="fruits" id="fruit" name="fruit">
+                    <input type="text" list="fruits" id="fruit" name="datalistFruit">
                     <datalist id="fruits">
                         <option value="Apple"></option>
                         <option value="Banana"></option>
@@ -194,7 +195,7 @@
                     <label for="pear">pear</label>
                     <input type="checkbox" id="pear">
                     <label for="orange">orange</label>
-                    <input type="checkbox" id="orange">
+                    <input type="checkbox"  id="orange">
                 </form>
             </div>
             <div id="radio">
@@ -265,10 +266,10 @@
                 <div>
                     <form id = "form-id">
                         <label for="form_text">Form_Text</label>
-                        <input type="text">
+                        <input type="text" name = "formText">
                         <label for="fruit"> List🍇: </label>
                         <input type="text" list="fruits" id="fruit" name="fruit">
-                        <datalist id="fruits">
+                        <datalist id="fruits" name = "fruitDatalist2">
                             <option value="Apple"></option>
                             <option value="Banana"></option>
                             <option value="Orange"></option>
@@ -287,24 +288,24 @@
                         <div id="form_checkbox">
                             <h6>checkbox</h6>
                             <p>What fruits do you like?</p>
-                            <label for="apple">apple</label>
-                            <input type="checkbox" id="apple">
-                            <label for="pear">pear</label>
-                            <input type="checkbox" id="pear">
-                            <label for="orange">orange</label>
-                            <input type="checkbox" id="orange">
+                            <label for="apple">I like apple</label>
+                            <input type="checkbox" name = "fruitCheckbox" id="apple" value = "apple">
+                            <label for="pear">I like pear</label>
+                            <input type="checkbox" name = "fruitCheckbox" id="pear" value = "pear">
+                            <label for="orange">I like orange</label>
+                            <input type="checkbox" name = "fruitCheckbox" id="orange" value = "orange">
                         </div>
                         <div id="form_radio">
                             <h6>radio</h6>
                             <p>What's your favorite fruit?</p>
                             <label for="apple">apple</label>
-                            <input type="radio" name="fruit" id="apple">
+                            <input type="radio" name="fruitRadio" id="apple" value = "apple">
                             <br>
                             <label for="orange">orange</label>
-                            <input type="radio" name="fruit" id="orange">
+                            <input type="radio" name="fruitRadio" id="orange" value = "orange">
                             <br>
                             <label for="pear">pear</label>
-                            <input type="radio" name="fruit" id="pear">
+                            <input type="radio" name="fruitRadio" id="pear" value = "pear">
                         </div>
                         <div id="form_textarea">
                             <label for="label_textarea">textarea</label>
@@ -315,7 +316,7 @@
                         <div id="form_number">
                             <h6>number</h6>
                             <p>How many fruits do you want?</p>
-                            <input type="number">
+                            <input type="number" name = "formNumber">
                         </div>
                         <div>
                             <label for="label_color">color</label>
@@ -341,10 +342,10 @@
                             <label for="label_hidden">hidden</label>
                             <input name="label_hidden" id="label_hidden" type="hidden">
                         </div>
-                        <div>
+                        <!-- <div>
                             <label for="label_image">image</label>
                             <input name="label_image" id="label_date" type="image">
-                        </div>
+                        </div> -->
                         <div>
                             <label for="label_search">search</label>
                             <input name="label_search" id="label_search" type="search">
@@ -377,9 +378,9 @@
                             <option value="goldfish">Goldfish</option>
                         </select>
 
-                        <label for="pet-select">Choose a pet:</label>
+                        <!-- <label for="pet-select">Choose a pet:</label> -->
 
-                        <select name="pets" id="pet-select" multiple>
+                        <!-- <select name="pets" id="pet-select" multiple>
                             <option value="">--Please choose an option--</option>
                             <option value="dog">Dog</option>
                             <option value="cat">Cat</option>
@@ -387,12 +388,17 @@
                             <option value="parrot">Parrot</option>
                             <option value="spider">Spider</option>
                             <option value="goldfish">Goldfish</option>
-                        </select>
+                        </select> -->
                         <div id="form_submit">
                             <h6>submit</h6>
-                            <input type="submit" value="upload fruits" onclick = "handleFormSubmit()">
+                            <input type="submit" value="upload fruits" onclick = "handleFormSubmit(event)">
+                            <input type = "button" onclick="handleFormOnLoad(event)" value = "initialize">
+                            <input type="reset">
+                            <!-- <input type = "button">
+                            <input type="reset"> -->
                             <!-- serialize / unserialize -->
                         </div>
+
                     </form>
                 </div>
 
