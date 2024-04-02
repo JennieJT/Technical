@@ -16,6 +16,7 @@ const handleButton = () => {
     console.log("handle button callback ends.");
 }
 
+//Promise grammar;
 const hellSaver = (saver) => {
     return new Promise((resolve, reject) => {
         let a = 4;
@@ -159,4 +160,33 @@ function handleConfirm(){
 function handlePrompt(){
     const identity = prompt("Are you a great programmer?");
     console.log(`Your programming identity is ${identity}.`);
+
+    /**
+     * @type{string} 
+     */
+    let str;
+
+    /**
+     * 
+     * @param {string} e 
+     * @param {array} f 
+     * @param {object} g 
+     * @param {{a:string, b: number, c: array}} h 
+     * @returns {{a: string, b: Function, c: array}}
+     */
+
+    function a(e, f, g, h){
+        return {};
+    }
+
+    let b = a();
+    /**
+     * @type {MouseEvent}
+     */
+    let mouse;
+    //mouse.preventDefault();
+    //mouse.stopPropagation
+    
+
 }
+

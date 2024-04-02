@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <script src = "./src/index.js"></script>
+    <script src="./src/index.js"></script>
     <div class="head">
         <h1 id="websiteTitle">
             -- J❤️T -- C A D A M Y -- (●'◡'●)
@@ -26,11 +26,17 @@
             <li class="navBar"><a href="./src/CSS.html" target="_self">CSS</a></li>
         </nav>
     </div>
-    <div id="main" style="flex-direction: row; display : flex; height: 90vh;">
+    <div id="main" style="flex-direction: row; display : flex;">
         <div class="leftBar">
             <div id="elements">
                 <h2>html basic tags</h2>
                 <ol style="text-align: left;">
+                    <li>
+                        <a href="#div">div</a>
+                    </li>
+                    <li>
+                        <a href="#a">a</a>
+                    </li>
                     <li>
                         <a href="#paragraph" onclick="onActive(event)">paragraph</a>
                     </li>
@@ -65,6 +71,9 @@
                     <li>
                         <a href="#text">text</a>
                     </li>
+                    <li>
+                        <a href="#form">form</a>
+                    </li>
                     <h4>Others</h4>
                     <li>
                         <a href="#nav">nav</a>
@@ -96,6 +105,23 @@
         </div>
         <div class="middleCol" id="middle" title="middle title" style="width: 60%; border: 1px solid black">
             <h2>--display--</h2>
+            <div id="div">
+                <h5>Let's do a deep research about capturing, target, bubbling!</h5>
+                <div id="grandDiv"> I'm grandpa
+                    <div id="dadDiv">I'm papa
+                        <div id="sonDiv">I'm son</div>
+                    </div>
+                </div>
+            </div>
+            <div id="a">
+                <h3>I want to test preventDefault(). </h3>
+                <a href="" onmouseover="handleAMouseOver(event)" onclick="handleAClick(event)"
+                    onmousemove="handleAMouseMove(event)" onmouseleave="handleAMouseLeave(event)"
+                    onmouseenter="handleAMouseEnter(event)">Click Me with prevent</a>
+                <a href="">Click me without prevent</a>
+                <div id="mouseParameter" style="display: none; background-color: bisque; border:1px black solid"></div>
+                <div id="mouseParameterAll" style="display: none"></div>
+            </div>
             <div id="paragraph">
                 <h6>
                     Paragraph
@@ -221,19 +247,155 @@
                 </p>
             </div>
             <div id="button">
-                <div id = "button_container">
-                <div><button onclick="handleButton()">Press Me</button></div>
-                <div><button onclick = "handleCallback()">Callback Function</button></div>
-                <div><button onclick = "handlePromise()">Promise</button></div>
-                <div><button onclick = "handleThis()">This</button></div>
-                <div><button onclick="handleBindThis()">Bind this</button></div>
-                <div></div>
-                <div><button onclick = "handleClosure01()">Closure01</button></div>
-                <div><button onclick = "handleClosure02()">Closure02</button></div>
-                <div><button onclick = "handleClosure03()">Closure03</button></div>
-                <div><button onclick = "handleConfirm()">Confirm Me</button></div>
-                <div><button onclick="handlePrompt()">Prompt Me</button></div>
+                <div id="button_container">
+                    <div><button onclick="handleButton()">Press Me</button></div>
+                    <div><button onclick="handleCallback()">Callback Function</button></div>
+                    <div><button onclick="handlePromise()">Promise</button></div>
+                    <div><button onclick="handleThis()">This</button></div>
+                    <div><button onclick="handleBindThis()">Bind this</button></div>
+                    <div></div>
+                    <div><button onclick="handleClosure01()">Closure01</button></div>
+                    <div><button onclick="handleClosure02()">Closure02</button></div>
+                    <div><button onclick="handleClosure03()">Closure03</button></div>
+                    <div><button onclick="handleConfirm()">Confirm Me</button></div>
+                    <div><button onclick="handlePrompt()">Prompt Me</button></div>
                 </div>
+            </div>
+            <div id="form">
+                <div>
+                    <form id = "form-id">
+                        <label for="form_text">Form_Text</label>
+                        <input type="text">
+                        <label for="fruit"> List🍇: </label>
+                        <input type="text" list="fruits" id="fruit" name="fruit">
+                        <datalist id="fruits">
+                            <option value="Apple"></option>
+                            <option value="Banana"></option>
+                            <option value="Orange"></option>
+                            <option value="Pineapple"></option>
+                            <option value="Pear"></option>
+                            <option value="Tomato"></option>
+                            <option value="Strawberry"></option>
+                            <option value="Grape"></option>
+                            <option value="WaterMelon"></option>
+                        </datalist>
+                        <div id="form_range">
+                            <h6>range</h6>
+                            <label for="range">Range: </label>
+                            <input type="range" name="range" id="range">
+                        </div>
+                        <div id="form_checkbox">
+                            <h6>checkbox</h6>
+                            <p>What fruits do you like?</p>
+                            <label for="apple">apple</label>
+                            <input type="checkbox" id="apple">
+                            <label for="pear">pear</label>
+                            <input type="checkbox" id="pear">
+                            <label for="orange">orange</label>
+                            <input type="checkbox" id="orange">
+                        </div>
+                        <div id="form_radio">
+                            <h6>radio</h6>
+                            <p>What's your favorite fruit?</p>
+                            <label for="apple">apple</label>
+                            <input type="radio" name="fruit" id="apple">
+                            <br>
+                            <label for="orange">orange</label>
+                            <input type="radio" name="fruit" id="orange">
+                            <br>
+                            <label for="pear">pear</label>
+                            <input type="radio" name="fruit" id="pear">
+                        </div>
+                        <div id="form_textarea">
+                            <label for="label_textarea">textarea</label>
+
+                            <textarea name="label_textarea" id="label_textarea" rows="10"
+                                cols="50">I have a date</textarea>
+                        </div>
+                        <div id="form_number">
+                            <h6>number</h6>
+                            <p>How many fruits do you want?</p>
+                            <input type="number">
+                        </div>
+                        <div>
+                            <label for="label_color">color</label>
+                            <input name="label_color" id="label_color" type="color">
+                        </div>
+                        <div>
+                            <label for="label_date">date</label>
+                            <input name="label_date" id="label_date" type="date">
+                        </div>
+                        <div>
+                            <label for="label_datetime">datetime</label>
+                            <input name="label_datetime" id="label_datetime" type="datetime">
+                        </div>
+                        <div>
+                            <label for="label_email">email</label>
+                            <input name="label_email" id="label_email" type="email">
+                        </div>
+                        <div>
+                            <label for="label_file">file</label>
+                            <input name="label_file" id="label_file" type="file">
+                        </div>
+                        <div>
+                            <label for="label_hidden">hidden</label>
+                            <input name="label_hidden" id="label_hidden" type="hidden">
+                        </div>
+                        <div>
+                            <label for="label_image">image</label>
+                            <input name="label_image" id="label_date" type="image">
+                        </div>
+                        <div>
+                            <label for="label_search">search</label>
+                            <input name="label_search" id="label_search" type="search">
+                        </div>
+                        <div>
+                            <label for="label_tel">tel</label>
+                            <input name="label_date" id="label_date" type="tel">
+                        </div>
+                        <div>
+                            <label for="label_time">time</label>
+                            <input name="label_time" id="label_time" type="time">
+                        </div>
+                        <div>
+                            <label for="label_url">url</label>
+                            <input name="label_url" id="label_url" type="url">
+                        </div>
+                        <div>
+                            <label for="label_week">week</label>
+                            <input name="label_week" id="label_week" type="week">
+                        </div>
+                        <label for="pet-select">Choose a pet:</label>
+
+                        <select name="pets" id="pet-select">
+                            <option value="">--Please choose an option--</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </select>
+
+                        <label for="pet-select">Choose a pet:</label>
+
+                        <select name="pets" id="pet-select" multiple>
+                            <option value="">--Please choose an option--</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </select>
+                        <div id="form_submit">
+                            <h6>submit</h6>
+                            <input type="submit" value="upload fruits" onclick = "handleFormSubmit()">
+                            <!-- serialize / unserialize -->
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </div>
         <div class="rightCol" style="width: 20%; border: 1px solid black">
@@ -254,6 +416,7 @@
         console.log(onHTML);
     </script> -->
     <script src="./src/another.js"></script>
+    <script src="./src/indexAfter.js"></script>
 </body>
 
 </html>

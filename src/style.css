@@ -5,7 +5,7 @@ body {
 
 #middle>div {
     display: none;
-    height: 100px;
+    height: auto;
 }
 
 #main>div {
@@ -100,4 +100,26 @@ button {
     cursor: pointer;
     width: 10rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#grandDiv {
+    background-color: antiquewhite;
+    height:50em;
+    display: flex;
+    margin: 5%;
+    padding: 5%;
+    border:1.5px black dotted;
+
+    #dadDiv {
+        background-color: coral;
+        align-items: flex-end;
+        height: 10em;
+        width: 15em;
+
+        #sonDiv {
+            background-color: crimson;
+            height: 5em;
+            
+        }
+    }
 }
