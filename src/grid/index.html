@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id = "main">
+        <div style="min-height: auto;border: 1.5px solid black">
+            <a id="addRowAnchor">ADD</a>
+            <a id="deleteRowAnchor">DELETE</a>
+            <a id="editRowAnchor">EDIT</a>
+        </div>
+        <div>
+            <table>
+                <caption>
+                    @Copyright Jennie J❤️T
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Person</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Interests</th>
+                        <th scope="col">Sex</th>
+                    </tr>
+                </thead>
+                <tbody id = "renderPeopleToTable">
+                    <tr >
+                        <th scope="row">Matt</th>
+                        <td>24</td>
+                        <td>HTML</td>
+                        <td>M</td>
+                    </tr>
+                </tbody>
+                <!-- <tfoot>
+                </tfoot> -->
+            </table>
+        </div>
+    </div>
+    <div class="dialogModel">
+        <div class="dialogContent" style="width: 300px; min-height: 200px; background-color: coral;">
+            <div></div>
+            <div>
+                <form id="addPerson">
+                    <div>
+                        <label for="namePerson"><strong>Name: </strong></label>
+                        <input name="namePerson" type="text">
+                    </div>
+                    <div>
+                        <label for="numberPerson"><strong>Age:</strong> </label>
+                        <input name="numberPerson" type="number">
+                    </div>
+                    <div>
+                        <h4>Interests: </h4>
+                        <input name="InterestsPerson" id="HTMLInterest" type="checkbox" value = "HTML">
+                        <label for="HTMLInterest"> HTML </label>
+                        <input name="InterestsPerson" id="JSInterest" type="checkbox" value = "Javascript">
+                        <label for="JSInterest"> Javascript </label>
+                        <input name="InterestsPerson" id="CSSInterest" type="checkbox" value = "CSS">
+                        <label for="CSSInterest"> CSS </label>
+
+                    </div>
+                    <h4>Sex: </h4>
+                    <input name="sexPerson" id="femaleSex" type="radio" value = "F">
+                    <label for="femaleSex">Female</label>
+                    <input name="sexPerson" id="maleSex" type="radio" value = "M">
+                    <label for="maleSex">Male</label>
+
+                </form>
+            </div>
+            <div>
+                <button id="confirmButton">OK</button>
+                <button id="cancelButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

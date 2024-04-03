@@ -1,0 +1,105 @@
+#main {
+    position: fixed;
+    /* Ensures centering works even with scrolling content */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the div horizontally and vertically */
+    background-color: rgba(255, 159, 243, 0.7);
+    /* Light pink with 70% transparency */
+    padding: 30px 40px 10px 40px;
+    border-radius: 8px;
+    /* Rounded corners for a softer look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    width: fit-content;
+    /* Adjust width as needed */
+    max-width: 80%;
+    /* Optional: Set a maximum width */
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140 140 140);
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+}
+
+thead,
+tfoot {
+    background-color: rgb(228 240 245);
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+td:last-of-type {
+    text-align: center;
+}
+
+tbody>tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+}
+
+tfoot th {
+    text-align: right;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+
+/* Style the dialog itself */
+.dialogContent {
+    position: fixed;
+    /* Ensures the dialog stays in place when scrolling */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the dialog */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* Set a high z-index to bring the dialog to the foreground */
+    /* display: none; Initially hide the dialog */
+}
+
+/* Style the dialog overlay (optional) */
+.dialogModel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    z-index: 9;
+    /* Set a slightly lower z-index than the dialog */
+    display: none;
+    /* Initially hide the overlay */
+}
+
+/* Style the button that opens the dialog 
+  .open-dialog-button {
+    Style your button here 
+  }
+  
+  Show and hide functionality (replace with your JavaScript logic) 
+  .dialog-overlay.active,
+  .dialog.active {
+    display: block; 
+  }*/

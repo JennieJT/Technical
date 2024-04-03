@@ -169,16 +169,33 @@ function handleFormSubmit(e) {
     localforage.setItem('jtFormValues', formValues);
 }
 
+function triggerReset(){
+    /**
+     * @type {HTMLInputElement}
+     */
+    const b = document.getElementById("formReset");
+    const e = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        clientX: 150,
+        clientY: 150
+      });
+    b.dispatchEvent(e);
+}
+
+
 function handleFormOnLoad(e) {
     /**
      * @type {object}
      */
     let initData;
+    triggerReset();
     localforage.getItem('jtFormValues').then((it) => {
         initData = it;
+        //getelementbyid
         const allInputs = document.querySelectorAll("#form input");
         for (let key in initData) {
-            console.log(key + " " + initData[key])
+            //console.log(key + " " + initData[key])
             allInputs.forEach((tmp) => {
                 if (tmp.type === "checkbox" && key.toLowerCase().includes("checkbox")) {
                     if(initData[key].includes(tmp.value))
@@ -195,5 +212,23 @@ function handleFormOnLoad(e) {
                 }
             });
         }
+    });
+}
+
+function handleFormOnLoad2(e) {
+    /**
+     * @type {object}
+     */
+    let initData;
+    triggerReset();
+    localforage.getItem('jtFormValues').then((it) => {
+        initData = it;
+        //getelementbyid
+        console.log("checking type of tagname");
+        for (let key in initData) {
+            //console.log(key + " " + initData[key])
+            let tmp = document.getElementsByTagName(key);
+            console.log(tmp.toString());
+            };
     });
 }
