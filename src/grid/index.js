@@ -9,7 +9,6 @@
         }
     ];
     render();
-
     function generateUniqueId() {
         return Math.floor(Math.random() * 1000000000).toString(36) + Date.now().toString(36);
     }
@@ -32,22 +31,29 @@
         }
         table.innerHTML = htmlContent;
     }
+    //make sure all the line for info of a person has been filled.
+    function storeInfo(person) {
+        const name = document.querySelector('input[name="namePerson"]').value;
+        const sex = document.querySelectorAll('input[name="sexPerson"]:checked');
+        const age = document.querySelector('input[name="numberPerson"]').value;
+        const interests = document.querySelectorAll('input[name="interestsPerson"]:checked')
+        if(name && sex && age){
+            person.name = name;
+            person.sex = sex[0].value;
+            person.age = age;
+            person.interests = Array.from(interests).map((interest) => interest.value);
+        }else{
+            alert("Please fill all the lines first!");
+        }
+    }
 
     function addPeopleInfo() {
         const person = {};
         person.id = generateUniqueId();
-        person.name = document.querySelector('input[name="namePerson"]').value;
-        person.sex = document.querySelectorAll('input[name="sexPerson"]:checked')[0].value;
-        person.age = document.querySelector('input[name="numberPerson"]').value;
-        const interests = document.querySelectorAll('input[name="InterestsPerson"]:checked')
-        person.interests = Array.from(interests).map((interest) => interest.value);
-        // console.log(person);
-
+        storeInfo(person);
         peopleInfo.push(person);
-
     };
 
-    //!!!!not optimized. Need to discuss deletion rules.!!!!
     function deletePeopleInfo() {
         const deletePeople = document.querySelectorAll('input[name = "selectPeopleCheckbox"]:checked');
         const deleteIds = Array.from(deletePeople).map((p) => p.id);
@@ -59,11 +65,7 @@
     function editPeopleInfo(editedId) {
         for (let person of peopleInfo) {
             if (person.id === editedId) {
-                person.name = document.querySelector('input[name="namePerson"]').value;
-                person.sex = document.querySelectorAll('input[name="sexPerson"]:checked')[0].value;
-                person.age = document.querySelector('input[name="numberPerson"]').value;
-                const interests = document.querySelectorAll('input[name="InterestsPerson"]:checked')
-                person.interests = Array.from(interests).map((interest) => interest.value);
+                storeInfo(person);
             }
         }
     }
@@ -75,7 +77,46 @@
          */
         const dialogModel = document.getElementsByClassName("dialogModel")[0];
         dialogModel.style.display = "block";
+        renderDialog();
+
+        function triggerReset() {
+            /**
+             * @type {HTMLInputElement}
+             */
+            const b = document.getElementById("resetButton");
+            const e = new MouseEvent("click", {
+                bubbles: true,
+                cancelable: true,
+                clientX: 150,
+                clientY: 150
+            });
+            b.dispatchEvent(e);
+        }
+
+        function renderDialog() {
+            triggerReset();
+            if (editedId) {
+                person = peopleInfo.filter((p) => p.id === editedId)[0];
+                const name = document.querySelector('#addPerson input[name="namePerson"]');
+                const number = document.querySelector('#addPerson input[name="numberPerson"]');
+                document.querySelector('#addPerson input[name="sexPerson"]');
+                name.value = person.name;
+                number.value = person.age;
+                if (person.sex === "M") {
+                    document.querySelector('#addPerson #maleSex').checked = true;
+                    document.querySelector('#addPerson #femaleSex').checked = false;
+                } else {
+                    document.querySelector('#addPerson #femaleSex').checked = true;
+                    document.querySelector('#addPerson #maleSex').checked = false;
+                }
+
+                for (let interest of person.interests) {
+                    document.querySelector(`#addPerson input[value = "${interest}"]`).checked = true;
+                }
+            }
+        }
     }
+
     let editedId = "";
     function editModel() {
         //1. alert if select multiple or no
@@ -85,7 +126,7 @@
         } else {
             //2. identify id & open handleOK() to edit the info
             editedId = editedPeople[0].id
-            doModel();
+           doModel();
         }
     }
     function deleteModel() {
@@ -105,7 +146,8 @@
         dialogModel.style.display = "none";
     }
     //submit input data
-    function handleOK() {
+    function handleOK(event) {
+        event.preventDefault();
         if (manipulateType === "add") {
             addPeopleInfo();
         } else if (manipulateType === "delete") {
@@ -119,6 +161,7 @@
         }
         render();
         cancelModel();
+        editedId = "";
     }
     //reset input without submission
     function handleCancel() {
