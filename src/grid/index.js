@@ -1,4 +1,5 @@
-(function () {
+import { getPeopleInfo } from "../api/axiosExample";
+    
     let peopleInfo = [
         {
             id: generateUniqueId(),
@@ -196,5 +197,8 @@
     document.getElementById("confirmButton").addEventListener("click", handleOK);
     document.getElementById("cancelButton").addEventListener("click", handleCancel);
 
-}()
-)
+    getPeopleInfo().then((people) => {
+        peopleInfo = JSON.parse(people.data);
+        render();
+    });
+
